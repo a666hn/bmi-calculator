@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/apis/bmi_calculator.dart';
 import 'package:bmi_calculator/components/bmi_bottom_container.dart';
 import 'package:bmi_calculator/components/bmi_card.dart';
 import 'package:bmi_calculator/components/bmi_circle_icon_button.dart';
@@ -238,10 +239,17 @@ class _InputPageState extends State<InputPage> {
               style: kLargeTextButtonStyle,
             ),
             onTap: () {
+              BMICalculator bmi =
+                  BMICalculator(height: _height, weight: _weight);
+
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const BMIScreenCalculateResult(),
+                  builder: (context) => BMIScreenCalculateResult(
+                    bmiResult: bmi.calculate(),
+                    resultText: bmi.getResultOfBMI(),
+                    interpreter: bmi.getInterpretaion(),
+                  ),
                 ),
               );
             },

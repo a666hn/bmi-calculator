@@ -4,7 +4,16 @@ import 'package:bmi_calculator/dictionary/constants/global_constants.dart';
 import 'package:flutter/material.dart';
 
 class BMIScreenCalculateResult extends StatelessWidget {
-  const BMIScreenCalculateResult({Key? key}) : super(key: key);
+  const BMIScreenCalculateResult(
+      {Key? key,
+      required this.bmiResult,
+      required this.resultText,
+      required this.interpreter})
+      : super(key: key);
+
+  final String bmiResult;
+  final String resultText;
+  final String interpreter;
 
   @override
   Widget build(BuildContext context) {
@@ -31,17 +40,17 @@ class BMIScreenCalculateResult extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const <Widget>[
+                  children: <Widget>[
                     Text(
-                      'NORMAL',
+                      resultText,
                       style: kLabelTextStyle18Green,
                     ),
                     Text(
-                      '18.5',
+                      bmiResult,
                       style: kLabelTextStyleBold50,
                     ),
                     Text(
-                      'Your BMI Result is quite low, you should eat more!',
+                      interpreter,
                       style: kLabelTextStyle15,
                     ),
                   ],
