@@ -4,6 +4,7 @@ import 'package:bmi_calculator/components/bmi_circle_icon_button.dart';
 import 'package:bmi_calculator/components/bmi_icon.dart';
 import 'package:bmi_calculator/dictionary/constants/global_constants.dart';
 import 'package:bmi_calculator/dictionary/enums/global_enums.dart';
+import 'package:bmi_calculator/pages/results/calculate_result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -231,7 +232,20 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          const BMIBottomContainer(),
+          BMIBottomContainer(
+            text: const Text(
+              'CALCULATE',
+              style: kLargeTextButtonStyle,
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const BMIScreenCalculateResult(),
+                ),
+              );
+            },
+          ),
         ],
       ),
     );

@@ -37,3 +37,23 @@ const BoxConstraints kSizeBmiCircleIconButton = BoxConstraints.tightFor(
 
 /// Using this for color of BMICircleIconBotton  color
 const Color kBmiCircleIconButtonColor = Color(0xFF4C4F5E);
+
+/// Using this for text style of large text button
+const TextStyle kLargeTextButtonStyle = TextStyle(
+  fontSize: 25.0,
+  fontWeight: FontWeight.bold,
+  color: Colors.white,
+);
+
+/// Using this to use size 15 in font style
+const TextStyle kLabelTextStyle15 = TextStyle(
+  color: Color(0xFF8D8E98),
+  fontSize: 15.0,
+);
+
+/// Using this to use size 15 in font style
+const TextStyle kLabelTextStyle18Green = TextStyle(
+  color: Colors.green,
+  fontSize: 18.0,
+  fontWeight: FontWeight.bold,
+);
